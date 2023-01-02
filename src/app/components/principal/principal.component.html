@@ -1,0 +1,43 @@
+<header class="header">
+   
+      <div class="btn-menu">
+        <label for="btn-menu">☰</label>
+      </div>
+      <div class="logo">
+        <h1>Builder Tester Funlam</h1>
+      </div>
+      <nav class="menu">
+        <a (click)="goMain()">Inicio</a>
+        <a (click)="goFormularios()">Formularios</a>
+        <a *ngIf="!uwu()" (click)="goLogin()">Sesión</a>
+        
+        <button *ngIf="uwu()" class="btn  btn-secondary" type="button" (click)="signOut()">
+          Salir
+        </button>  
+  
+  
+      </nav>
+
+  </header>
+
+
+
+  
+  <div class="capa"></div>
+
+
+
+
+  
+  <input type="checkbox" id="btn-menu" />
+
+
+  <div class="container-menu">
+    <div class="cont-menu">
+      <nav>
+        <app-perfil *ngIf="uid!=''" ></app-perfil>
+        <button *ngIf="!uwu()" (click)="goLogin()" class="btn btn-warning mt-5 mb-5">¡Inicia sesión!</button>
+      </nav>
+      <label for="btn-menu">✖️</label>
+    </div>
+  </div>

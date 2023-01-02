@@ -1,0 +1,90 @@
+
+    <app-principal></app-principal>
+
+
+
+  <header>
+    <div class="col2"></div>
+    <div class="col1">
+      <h1 class="center">{{ titulo | uppercase }}</h1>
+      <div class="form-group">
+        <label for="exampleInputEmail1" class="form-label"
+          >Correo electronico</label>
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon1"
+            ><i class="fa-solid fa-user"></i
+          ></span>
+          <input
+            [ngClass]="emailDanger"
+            [(ngModel)]="user.email"
+            type="email"
+            class="form-control form-label-lg"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            placeholder="Ingrese correo"
+          />
+        </div>
+
+        <small id="emailHelp"
+          >Nunca compartiremos tus datos con alguien más.</small
+        >
+      </div>
+      <div class="form-group mt-3">
+        <label for="exampleInputPassword1" class="form-label form-label-lg"
+          >Contraseña</label
+        >
+
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon1"
+            ><i class="fa-solid fa-lock"></i>
+          </span>
+          <input
+            [ngClass]="passwordDanger"
+            [(ngModel)]="user.password"
+            type="password"
+            class="form-control"
+            id="exampleInputPassword1"
+            placeholder="Contraseña"
+          />
+        </div>
+      </div>
+
+      <div
+        (click)="forgotPassword()"
+        class="forgotPassword d-flex flex-row-reverse"
+      >
+        <small >
+          <i class="fa-solid fa-key"></i> Olvido su contraseña? ¡Click
+          aqui!.</small
+        >
+      </div>
+      <div class="botones d-grid gap-2">
+        <button
+          class="btn btn-lg btn-primary"
+          (click)="loginFireBase()"
+          type="button"
+        >
+          Ingresar
+        </button>
+        <button
+          class="btn btn-lg btn-secondary"
+          (click)="loginGoogle()"
+          type="button"
+        >
+          <img
+            class="logoGoogle"
+            src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-webinar-optimizing-for-success-google-business-webinar-13.png"
+          />
+          Google
+        </button>
+
+        <button
+          class="btn btn-lg btn-warning   "
+          (click)="goToRegister()"
+          type="button"
+        >
+          Registrar
+        </button>
+      </div>
+    </div>
+  </header>

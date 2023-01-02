@@ -1,0 +1,75 @@
+<app-principal></app-principal>
+    <header >
+        <div class="header-cont">
+            <h1>Formularios</h1>
+        </div>
+    </header>
+
+<section class="page2">
+    <section class="page2">
+        <div class="page2-body">
+            <h1>{{formulariosVulnerabilidad}}</h1>
+        </div>
+    </section>
+</section>
+
+<section class="page3">
+    <div class="page3-body">
+        <div class="row row-cols-1 row-cols-md-2 g-2">
+            <div class="col">
+              <div class="card">
+                <img [src]="formularios[0].src" class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h5 class="card-title">{{ formularios[0].titulo }}</h5>
+                  <p class="card-text">
+                    {{ formularios[0].parrafo }}
+                  </p>
+                  <div class="d-flex justify-content-end">
+                    <button class="btn btn-primary " (click)="irFormulario(0)">
+                      Empezar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+            <div class="col">
+              <div class="card">
+                <img [src]="formularios[1].src" class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h5 class="card-title">{{ formularios[1].titulo }}</h5>
+                  <p class="card-text">
+                    {{ formularios[1].parrafo }}
+                  </p>
+                  <div class="d-flex justify-content-end">
+                    <button class="btn btn-primary mb-3" (click)="irFormulario(1)">
+                      Empezar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+            <div class="col">
+              <div class="card">
+                <img [src]="formularios[2].src" class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h5 class="card-title">{{ formularios[2].titulo }}</h5>
+                  <p class="card-text">
+                    {{ formularios[2].parrafo }}
+                  </p>
+                  <div class="d-flex justify-content-end">
+                    <button class="btn btn-primary mb-3" (click)="irFormulario(2)">
+                      Empezar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+    </div>
+</section>
+
+<app-barra-final></app-barra-final>

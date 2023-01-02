@@ -1,0 +1,170 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    width:100vw;
+    height: 100vh;
+    background: linear-gradient(rgba(255, 255, 255, 0),rgba(0,0,0,0.8)),url('../../../assets/imagenesFondo/fondo3.jpg');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+    justify-content: start;
+
+}
+.header-cont{
+    margin-bottom: 20vh;
+    color: white;
+    margin-left: 5vw;
+}
+.header-cont h1{
+    font-size: 7vmin;
+}
+.page2{
+    width: 100%;
+
+    margin: 0px auto;
+    background: linear-gradient(#000000 ,#1f1f1f);
+}
+.page2-body{
+    padding: 20vh 8vh 20vh 8vh;
+    text-align: center;
+    color: white;
+}
+.page2-body h2{
+    font-size:6vmin ;
+    margin-bottom: 2vh;
+}
+.page2-body h3{
+    font-size:3vmin;
+    font-weight: 100;
+}
+
+.page3{
+    width: 80%;
+    margin: 40px auto;
+}
+
+.page3-title{
+    text-align: center;
+    justify-content: center;
+    color:#1f1f1f ;
+}
+.page3-title h1 {
+    font-size: 8vmin;
+    font-weight: 600;
+}
+.line{
+    height: 0.4vw;
+    width: 100%;
+    margin: 10px auto;
+    border-radius: 30px;
+    background-color:#593196
+}
+.page3 .fila{
+    display: flex;
+    margin-top: 10vw;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    }
+.fila .col1 img{
+    width: 40%;
+}
+.fila .col2 img{
+    width: 40%;
+    margin-bottom: 15px;
+}
+
+.page3 .col1{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.page3 .col2{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.fila .col1 h4{
+    margin-top: 20px;
+    color: #1f1f1f;
+    font-size: 3vmin;
+    text-align: center;
+}
+.fila .col2 h4{
+    margin-top: 20px;
+    color: #1f1f1f;
+    font-size: 3vmin;
+    text-align: center;
+}
+
+/*Page 4*/
+.page4{
+    margin-top: 10vw;
+    width:100vw;
+    height: 80vh;
+    background: linear-gradient(rgba(255, 255, 255, 0),rgba(0,0,0,0.8)),url('../../../assets/imagenesFondo/fondo10.jpg');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items:center;
+    justify-content: start;
+}
+
+.title{
+    margin-left: 10vw;
+    width: 60%;
+    text-align: center;
+    justify-content: center;
+    color:#ffffff ;
+}
+.title h1 {
+    font-size: 6vmin;
+    font-weight: 600;
+}
+.title .line{
+    margin: 5px auto;
+    background-color: #ffffff;
+}
+.title h3{
+    margin-top: 2vw;
+    font-size: 5vmin;
+    font-weight: 100;
+}
+
+
+
+@media screen  and (max-width:900px){
+    .page2 h2{
+        font-size:8vmin ;
+        margin-bottom: 2vh;
+    }
+    .page2 h3{
+        font-size:5vmin;
+        font-weight: 100;
+    }
+    .page3 .col1{
+        width: 100%;  
+    }
+    .page3 .col2{
+        width: 100%;
+    }
+    .fila .col1 h4{
+        margin: 20px;
+        font-size: 6vmin;
+
+    }
+    .fila .col2 h4{
+
+        font-size: 6vmin;
+
+    }
+    
+}
+

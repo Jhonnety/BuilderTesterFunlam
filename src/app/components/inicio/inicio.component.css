@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    width:100vw;
+    height: 100vh;
+    background: linear-gradient(rgba(255, 255, 255, 0),rgba(0,0,0,0.8)),url('../../../assets/imagenesFondo/fondo14.jpg');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+    justify-content: start;
+
+}
+.header-cont{
+    margin-bottom: 20vh;
+    color: white;
+    margin-left: 5vw;
+}
+.header-cont h1{
+    font-size: 7vmin;
+}
+
+
+.page2{
+    width: 100%;
+
+    margin: 0px auto;
+    background: linear-gradient(#000000 ,#1f1f1f);
+}
+.page2-body{
+    padding: 20vh 8vh 20vh 8vh;
+    text-align: center;
+    color: white;
+}
+.page2-body h1{
+    font-size:5vmin ;
+    margin-bottom: 2vh;
+}
+.page3{
+    width: 90%;
+    margin: 5vw auto;
+}
+
+.page3-body{
+    text-align: center;
+    justify-content: center;
+    color:#1f1f1f ;
+    border-radius: 30px;
+    background: linear-gradient(#1f1f1f ,#593196);
+    padding: 1vw 0 1vw 0;
+}
+.card{
+    position:unset;
+    margin:  1vw 2vw 1vw 2vw;
+}
+.card  img{
+    width: 100%;
+    margin-bottom: 2vw;
+}
+.card  h5{
+   color: #593196;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.8vw;
+}
+.card  p{
+    margin: 0 2vw 1vw 2vw;
+    font-size: 1.2vw;
+    text-align:justify;
+ }
+
+.card button{
+    margin: 2vw 2vw 2vw 2vw;
+    font-size: 1.5vw;
+}
+
+
+@media screen and (max-width:768px) {
+    .card{
+        margin:  5vw 4vw 5vw 4vw;
+    }
+    .card  h5{
+        
+        font-size: 7vw;
+    }
+    .card  p{
+        font-size: 5vw;
+     }
+    
+    .card button{
+        font-size: 5vw;
+    }
+     
+}

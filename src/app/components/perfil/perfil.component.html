@@ -1,0 +1,215 @@
+<div class="contenedor1">
+  <div class="contenedorPerfil">
+    <div class="fondoPerfil"></div>
+    <div class="fotoPerfil">
+      <img *ngIf="foto1" class="foto" [src]="profile.foto" alt="img-avatar" />
+      <img
+        *ngIf="foto1 == false"
+        class="foto"
+        [src]="urlImagenAny | async"
+        alt="img-avatar"
+      />
+    </div>
+    <div class="botonPerfil">
+      <button
+        (click)="habilitarBotonesFoto()"
+        type="file"
+        id="botonFoto"
+        class="btn btn-primary"
+        [class.btn-warning]="botonesFoto"
+      >
+        <i class="fa-solid fa-arrows-spin"></i>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="datos">
+  <div class="datos1" *ngIf="botonesFoto">
+      <input
+        (change)="onUpload($event)"
+        class="form-control"
+        type="file"
+        id="formFile"
+      />
+      <div class="progress">
+        <div
+          class="progress-bar progress-bar-striped bg-pp"
+          role="progressbar"
+          [style.width]="(cargando | async) + '%'"
+        ></div>
+      </div>
+      <div class="d-flex justify-content-center">
+        <button
+          (click)="definirImagen()"
+          [disabled]="noEvento"
+          class="btn btn-warning mt-3 d-flex justify-content-center"
+        >
+          Definir como foto de perfil
+        </button>
+      </div>
+    </div>
+  <div class="datos2">
+    <div class="nombre">
+      <h3 class="titulo">
+        <app-spinner *ngIf="loading"></app-spinner> {{ profile.nombre1 + " "
+        }}{{ profile.nombre2 + " " }}{{ profile.apellido1 + " "
+        }}{{ profile.apellido2 }}
+      </h3>
+      <p class="texto">{{ permisos }}</p>
+    </div>
+    <div class="campos">
+      <div class="col1">
+          <li>
+            <i class="fa-solid fa-user"></i> Primer nombre:
+            <input
+            class="inputDatos"
+              type="text"
+              [(ngModel)]="profile.nombre1"
+              ngClass="'form-control' ? !disabled : form-control-plaintext"
+              [disabled]="disabled"
+              [placeholder]="placeholders.nombre1"
+              [class.purpura]="!disabled"
+            />
+          </li>
+          <li>
+            <i class="fa-solid fa-user"></i> Segundo nombre:
+            <input
+            class="inputDatos"
+              type="text"
+              [(ngModel)]="profile.nombre2"
+              ngClass="'form-control' ? !disabled : form-control-plaintext"
+              [disabled]="disabled"
+              [class.purpura]="!disabled"
+              [placeholder]="placeholders.nombre1"
+            />
+          </li>
+          <li>
+            <i class="fa-regular fa-user"></i> Primer apellido:
+            <input
+            class="inputDatos"
+              type="text"
+              [(ngModel)]="profile.apellido1"
+              ngClass="'form-control' ? !disabled : form-control-plaintext"
+              [disabled]="disabled"
+              [placeholder]="placeholders.apellido1"
+              [class.purpura]="!disabled"
+            />
+          </li>
+          <li>
+            <i class="fa-regular fa-user"></i> Segundo apellido:
+            <input
+            class="inputDatos"
+              type="text"
+              [(ngModel)]="profile.apellido2"
+              ngClass="'form-control' ? !disabled : form-control-plaintext"
+              [disabled]="disabled"
+              [placeholder]="placeholders.apellido1"
+              [class.purpura]="!disabled"
+            />
+          </li>
+
+
+
+          <li>
+            <i class="fa-solid fa-id-card"></i> Cedula:<input
+            class="inputDatos"
+              type="number"
+              [(ngModel)]="profile.cedula"
+              ngClass="'form-control' ? !disabled : form-control-plaintext"
+              [disabled]="disabled"
+              [class.purpura]="!disabled"
+              [placeholder]="placeholders.cedula"
+            />
+          </li>
+          
+      
+      </div>
+      <div class="col2">
+          <li>
+            <i class="fa-solid fa-calendar-days"></i> Fecha nacimiento.
+            <input
+            class="inputDatos"
+              type="text"
+              [(ngModel)]="profile.fechaNacimiento"
+              maxlength="10"
+              [placeholder]="placeholders.fechaNacimiento"
+              ngClass="'form-control' ? !disabled : form-control-plaintext"
+              [disabled]="disabled"
+              [class.purpura]="!disabled"
+            />
+          </li>
+          <li>
+            <i class="fa-solid fa-envelope"></i> Correo:
+            <input
+              type="text"
+              [(ngModel)]="profile.correo"
+              class="form-control-plaintext inputDatos"
+              disabled="true"
+            />
+          </li>
+          <li>
+            <i class="fa-solid fa-map-location-dot"></i> Direccion de usuario:<input
+            class="inputDatos"
+              type="text"
+              [(ngModel)]="profile.direccion"
+              ngClass="'form-control' ? !disabled : form-control-plaintext"
+              [disabled]="disabled"
+              [class.purpura]="!disabled"
+              [placeholder]="placeholders.direccion"
+            />
+          </li>
+          <li>
+            <i class="fa-solid fa-mobile"></i> Celular:<input
+            class="inputDatos"
+              type="number"
+              [(ngModel)]="profile.celular"
+              ngClass="'form-control' ? !disabled : form-control-plaintext"
+              [disabled]="disabled"
+              [class.purpura]="!disabled"
+              [placeholder]="placeholders.celular"
+            />
+          </li>
+          <li>
+            <i class="fa-solid fa-phone"></i> Telefono:
+            <input
+            class="inputDatos"
+              type="number"
+              [(ngModel)]="profile.telefono"
+              ngClass="'form-control' ? !disabled : form-control-plaintext"
+              [disabled]="disabled"
+              [class.purpura]="!disabled"
+              [placeholder]="placeholders.telefono"
+            />
+          </li>
+      
+      
+      </div>
+    </div>
+
+    <div class="botones">
+        <button
+          [disabled]="!datosOk"
+          (click)="guardar()"
+          [class.btn-warning]="loadingSave"
+          class="btn btn-lg btn-primary btn-social"
+        >
+          <i *ngIf="!loadingSave" class="fa-solid fa-floppy-disk"></i>
+          <div *ngIf="loadingSave" class="spinner-grow text-white" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+      
+        </button>
+
+        <button
+          [disabled]="!datosOk"
+          (click)="editar()"
+          [class.btn-warning]="!disabled"
+          class="btn btn-primary btn-lg btn-social"
+        >
+          <i class="fa-solid fa-pen-to-square"></i>
+
+        </button>
+
+      </div> 
+  </div>
+</div>

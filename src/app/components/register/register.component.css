@@ -1,0 +1,68 @@
+
+header{
+    width:100vw;
+    height: fit-content;
+    min-height:100vh;;
+    display: flex;
+    background: linear-gradient(rgba(255, 255, 255, 0),rgba(0,0,0,0.8)),url('../../../assets/imagenesFondo/fondo10.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+}
+.col1{
+    width: 45%;
+    height: auto;
+    margin: 5vw auto;;    
+    padding: 4% 5% 5% 4%;
+    border-radius: 40px;
+    background-color:  #f0f8ff7e;
+    font-weight: 600;
+}
+.col2{
+    width: 48%;
+    height: auto;
+}
+.input-group{
+    position:unset;
+}
+.form-control{
+    position:unset;
+}
+
+@media screen and (max-width:900px){
+    .container{
+        display: block;
+    }
+    .col1{
+        width: 100%;
+    }
+    .col2{
+        width: 0%;
+    }
+
+}
+@media screen and (max-width:615px){
+    .container{
+        margin-top: 120px;
+    }
+
+ }
+  @media screen and (max-width:305px){
+    .container{
+        margin-top: 180px;
+    }
+
+ }
+ @media screen and (max-width:291px){
+
+    .container{
+        margin-top: 200px;
+    }
+ }
+ @media screen and (max-width:261px){
+
+    .container{
+        margin-top: 230px;
+    }
+ }

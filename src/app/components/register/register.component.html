@@ -1,0 +1,54 @@
+
+
+   <app-principal></app-principal>
+    <header>
+
+        <div class="col1">
+            <h1 class="center mt-3">Creacion de cuenta</h1>
+
+
+            <div class="form-group">
+                <label  for="exampleInputEmail1" class="form-label mt-4">Correo electronico</label>
+                
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-user"></i></span>
+                <input  [ngClass]="emailWrongClass" [(ngModel)]="userP.email" type="email" class="form-control form-label-lg" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese un correo">
+                </div>
+                
+                <small id="emailHelp" >Nunca compartiremos tus datos con alguien más.</small>
+              </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1" class="form-label form-label-lg mt-2">Contraseña</label>
+                
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-lock"></i></span>
+                <input [ngClass]="wrongClass" [(ngModel)]="userP.password" type="password" class="form-control" [ngClass]="userP.password.length > 5  ? 'is-valid' : userP.password.length > 0 && userP.password.length <6 ? 'is-invalid': '' " id="exampleInputPassword1" placeholder="Contraseña (Minimo 6 caracteres)">
+                </div>
+              
+              
+                </div>
+              <div class="form-group">
+                <label for="exampleInputPassword2" class="form-label form-label-lg mt-2">Verificar contraseña</label>
+                
+                
+                
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-lock"></i></span>
+                <input [ngClass]="wrongClass" [(ngModel)]="passwordVerified" type="password" class="form-control" [ngClass]="passwordVerified != userP.password  ? 'is-invalid' :passwordVerified==''? '' :'is-valid' " id="exampleInputPassword2" placeholder="Verificar contraseña">
+                </div>
+            
+            
+            
+            </div>
+              <div class="d-grid gap-2 mt-5">
+                <button class="btn btn-lg btn-primary" (click)="registrarNuevoUsuario()" type="button">Registrar</button>
+                <button class="btn btn-lg btn-warning mt-3 mb-4" (click)="goToLogin()" type="button">Regresar</button>
+            </div>
+        </div>
+
+        <div class="col2">
+
+        </div> 
+     
+
+    </header>
